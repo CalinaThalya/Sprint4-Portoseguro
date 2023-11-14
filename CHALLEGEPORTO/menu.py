@@ -1,7 +1,6 @@
 import click
 import oracledb
 
-# Conectar ao banco de dados Oracle
 connection = oracledb.connect("rm552539/130701@oracle.fiap.com.br/orcl")
 cursor = connection.cursor()
 
@@ -35,7 +34,7 @@ def main():
 
 def create():
     """Cria um novo registro."""
-    id_segurado = input("ID do segurado: ")  # ou substitua por um valor fixo
+    id_segurado = input("ID do segurado: ")  
     cpf = input("CPF do segurado: ")
     nr_apolice = input("Número da apólice: ")
     dt_cadastro = input("Data de cadastro (YYYY-MM-DD): ")
@@ -94,7 +93,6 @@ def delete():
 if __name__ == '__main__':
     main()
 
-# Fechar cursor e conexão ao final do programa
 cursor.close()
 connection.close()
 print("Operações no banco de dados concluídas.")
